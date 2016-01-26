@@ -2,6 +2,14 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+" Settings for gvim
+set t_Co=256
+if has ('gui_running')
+  set lines=50
+  set columns=100
+  set guifont=Menlo\ 10
+endif
+
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.vimrc.before if it exists.
 if filereadable(expand("~/.vimrc.before"))
@@ -115,6 +123,6 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-colorscheme monokai
+colorscheme molokai
 
 inoremap jk <Esc>
