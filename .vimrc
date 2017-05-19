@@ -69,10 +69,18 @@ endif
 set autoindent
 "set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
-set expandtab
+"set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+function Tab2()
+    set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+    echo "Set tabs to 2"
+endfunction
+function Tab4()
+    set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
+    echo "Set tabs to 4"
+endfunction
+nmap <F2> :call Tab2()<CR>
+nmap <F4> :call Tab4()<CR>
 
 filetype plugin on
 filetype indent on
