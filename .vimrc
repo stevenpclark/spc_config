@@ -68,7 +68,7 @@ endif
 
 set autoindent
 "set smartindent
-set smarttab
+"set smarttab
 "set shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 set shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 function Tab2()
@@ -82,11 +82,15 @@ endfunction
 nmap <F2> :call Tab2()<CR>
 nmap <F4> :call Tab4()<CR>
 
+set textwidth=80
+set colorcolumn=+1
+
+filetype on
 filetype plugin on
 filetype indent on
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+" set list listchars=tab:\ \ ,trail:·
 
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
@@ -135,6 +139,10 @@ colorscheme monokai
 
 inoremap jk <Esc>
 
+"http://vim.1045645.n5.nabble.com/Auto-insert-header-description-td1139587.html
+":nnoremap <F9> :0r ~/spc_config/default_header.txt<cr>:1,/#------/s/!!DATE!!/\=strftime("%Y-%m-%d")<cr>
+:nnoremap <F9> :0r ~/spc_config/default_header2.txt<cr>
+
 " ================ Navigating splits ================
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -143,3 +151,5 @@ nnoremap <C-H> <C-W><C-H>
 
 set splitbelow
 set splitright
+
+
